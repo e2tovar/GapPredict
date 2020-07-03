@@ -1,4 +1,4 @@
-#Loading require libraries
+#Install require libraries
 lapply(c('XML', 'logging'), require, character.only = TRUE)
 
 directorio <- "D:/Estudio/BootCamp/R_Course/GapPredict/"
