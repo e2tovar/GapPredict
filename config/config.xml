@@ -3,6 +3,8 @@
   <input>
     <feature>desempleo.csv,fertilidad.csv, pib.csv, poblacion_total.csv</feature>
     <target> asesinatos_mujeres.csv</target>
+    <country>España</country>
+    <year>2015</year>
     <sep>,</sep>
   </input>
   
