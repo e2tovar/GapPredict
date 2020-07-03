@@ -13,23 +13,22 @@ validateConfig <- function(config){
                                                 "year", "sep"))
   
   #check whether there are empty feture, target, country and year
-  nodoFeature <- nchar(config$input$feature) > 0
-  nodoTarget <- nchar(config$input$target) > 0
-  nodoCountry <- nchar(config$input$country) > 0
-  nodoYear <- nchar(config$input$year) > 0
+  nodoFeature <- !is.null(config$input$feature)
+  nodoTarget <- !is.null(config$input$target)
+  nodoCountry <- !is.null(config$input$country)
+  nodoYear <- !is.null(config$input$year) 
   
   #Check and cast year as numeric
-  tryCatch(expr = {
-    config$input$year <- as.numeric(config$input$year)
-  },error = function(e){
+  if (!is.numeric(config$input$year)){
     logerror('The Year must be a number')
     stop()
-  })
-  
+  }
+  config$input$year <- as.numeric(config$input$year)
+    
   #Validate nodes
   nodos <- c("nodoPrincipal" = nodoPrincipal, "nodoInput" = nodoInput, 
              "nodoFeature" = nodoFeature, "nodoTarget" = nodoTarget,
-             "nodoCountry" = nodoCountry)
+             "nodoCountry" = nodoCountry, 'nodoYear'= nodoYear)
   
  
   
