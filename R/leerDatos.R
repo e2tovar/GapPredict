@@ -9,7 +9,6 @@
 #' @import logging
 #'
 
-
 leerDatos <- function(config, path_data){
   
   #esto me devolvera un string con el nombre del csv del target

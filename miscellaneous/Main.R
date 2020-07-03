@@ -13,10 +13,7 @@ archivos = list.files(path = 'R/', recursive = TRUE)
 lapply(paste0("R/", archivos), source)
 
 
+debug(gapPredictApp)
+gapPredictApp(directorio)
+undebug(gapPredictApp)
 
-#debug(clasificarContactosApp)
-#clasificarContactosApp(directorio)
-#undebug(clasificarContactosApp)
-
-
-  
