@@ -9,14 +9,6 @@
 #' @import logging
 #'
 
-library('XML')
-#get paths
-path_config = paste0(getwd(), "/config/", "config.xml")
-path_data <- paste0(getwd(), "/data/")
-
-#get config
-config_xml <- xmlParse(file = path_config)
-config <- xmlToList(config_xml)
 
 leerDatos <- function(config, path_data){
   
