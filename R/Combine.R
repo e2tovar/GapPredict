@@ -5,7 +5,7 @@
 
 library(reshape2)
 
-combine_data <- function(df_list, config){
+combine_data <- function(df_list){
   browser() #********************************************************************debug
   
   # Melting data sets and assigning name to columns

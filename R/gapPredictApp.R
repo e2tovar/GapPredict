@@ -28,8 +28,12 @@ gapPredictApp <- function(path){
     
     
     loginfo("Procesing Data...", logger = 'log')
-    final_df <- combine_data(datos, config)
+    df_merged <- combine_data(datos)
     loginfo("Procesing done.", logger = 'log')
+    
+    loginfo("Cleaning Data...", logger = 'log')
+    final_df <- clean_data(df_merged, config)
+    loginfo("Data ready to model", logger = 'log')
     
     # 
     # loginfo("Generando modelo...", logger = 'log')
