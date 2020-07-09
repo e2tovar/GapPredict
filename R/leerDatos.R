@@ -10,7 +10,7 @@
 #'
 
 leer_datos <- function(config, path){
-  browser()
+  
   #Cargar datos
   target_csv <- config$input$target
   string_predictores_csv <- config$input$feature

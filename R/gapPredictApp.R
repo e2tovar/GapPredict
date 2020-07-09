@@ -22,15 +22,15 @@ gapPredictApp <- function(path){
     config <- leer_config(path)
     loginfo("Config File read.", logger = 'log')
     
-    
     loginfo("Reading Data...", logger = 'log')
     datos <- leer_datos(config, path)
     loginfo("Datos leidos.", logger = 'log')
     
-    # loginfo("Procesando los datos...", logger = 'log')
-    # splitDatos <- preProcesarDatos(datos, config)
-    # loginfo("Datos procesados.", logger = 'log')
-    # 
+    
+    loginfo("Procesing Data...", logger = 'log')
+    final_df <- combine_data(datos, config)
+    loginfo("Procesing done.", logger = 'log')
+    
     # 
     # loginfo("Generando modelo...", logger = 'log')
     # output <- generarModelo(splitDatos, config)
