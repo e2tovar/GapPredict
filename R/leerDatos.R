@@ -10,6 +10,7 @@
 #'
 
 leer_datos <- function(config, path){
+  browser()
   #Cargar datos
   target_csv <- config$input$target
   string_predictores_csv <- config$input$feature
@@ -32,11 +33,17 @@ leer_datos <- function(config, path){
   for (x in lista_predictores_csv){
     df_name  <- substring(x, 1, nchar(x)-4)
     
-    lista_df_pred[[df_name]] <- read.csv(paste0(path, 'data/', x))
+    lista_df_pred[[df_name]] <- read.csv(paste0(path, 'data/', x), check.names = FALSE)
+    #lista_df_pred[[df_name]] <- data.table::fread(paste0(path, 'data/', x), sep = config$input$sep,
+                                       #encoding = 'UTF-8', data.table = FALSE)
   }
-  lista_final <- c()
+  
+  #crear nombre target
+  target_name = paste0(substring(target_csv, 1, nchar(x)-4), "_target")
+  lista_df_target <- list()
+  lista_df_target[[target_name]] <-  read.csv(paste0(path, 'data/', target_csv), check.names = FALSE)
+  
+  lista_final <- c(lista_df_target, lista_df_pred)
  
-  return(lista_df_pred)
+  return(lista_final)
 }
-
-

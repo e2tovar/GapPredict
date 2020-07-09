@@ -1,6 +1,6 @@
 validateData <- function(target, predictors_list, country, year){
   #validar los nombres de los csv y el formato.
-  browser()
+ 
   
   #nombres
   my_data = list.files(path = 'data/', recursive = TRUE)

@@ -6,7 +6,6 @@
 #' 
 
 validateConfig <- function(config){
-  browser()
   #check names in Main and input nodes
   nodoPrincipal <- identical(names(config), c("input"))
   nodoInput <- identical(names(config$input), c("feature", "target", "country",
