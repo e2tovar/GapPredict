@@ -16,4 +16,3 @@ lapply(paste0("R/", archivos), source)
 debug(gapPredictApp)
 gapPredictApp(directorio)
 undebug(gapPredictApp)
-
