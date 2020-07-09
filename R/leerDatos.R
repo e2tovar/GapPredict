@@ -10,17 +10,22 @@
 #'
 
 leer_datos <- function(config, path){
-  #esto me devolvera un string con el nombre del csv del target
+  #Cargar datos
   target_csv <- config$input$target
-  
-  #esto me devolvera una lista con los nombres de los csv de los predictores
   string_predictores_csv <- config$input$feature
-  lista_predictores_csv <- as.list(unlist(strsplit(string_predictores_csv, ',')))
-  
-  #cargar pais y nombre. TODO
   country <- config$input$country
   year <- config$input$year
-  target <- c(country, year)
+  #target <- c(country, year)
+  
+  #esto me devolvera una lista con los nombres de los csv de los predictores
+  lista_predictores_csv <- as.list(strsplit(string_predictores_csv, ",")[[1]])
+  
+  #Validar Datos
+  validateData(target = target_csv, predictors_list = lista_predictores_csv,
+               country = country,
+               year = year
+               )
+  
 
   #loading csv(s) in df(s)
   lista_df_pred <- list()
@@ -33,3 +38,5 @@ leer_datos <- function(config, path){
  
   return(lista_df_pred)
 }
+
+

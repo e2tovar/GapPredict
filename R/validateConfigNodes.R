@@ -16,14 +16,15 @@ validateConfig <- function(config){
   nodoFeature <- !is.null(config$input$feature)
   nodoTarget <- !is.null(config$input$target)
   nodoCountry <- !is.null(config$input$country)
-  nodoYear <- !is.null(config$input$year) 
+  nodoYear <- !is.null(config$input$year)
   
   #Check and cast year as numeric
-  if (!is.numeric(config$input$year)){
+  config$input$year <- as.numeric(config$input$year)
+  if (is.na(config$input$year)){
     logerror('The Year must be a number')
     stop()
   }
-  config$input$year <- as.numeric(config$input$year)
+  
     
   #Validate nodes
   nodos <- c("nodoPrincipal" = nodoPrincipal, "nodoInput" = nodoInput, 
