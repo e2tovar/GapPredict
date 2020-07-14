@@ -35,10 +35,10 @@ gapPredictApp <- function(path){
     final_df <- clean_data(df_merged, config)
     loginfo("Data ready to model", logger = 'log')
     
-    # 
-    # loginfo("Generando modelo...", logger = 'log')
-    # output <- generarModelo(splitDatos, config)
-    # loginfo("Modelo Generado.", logger = 'log')
+    browser()
+     # loginfo("Generando modelo...", logger = 'log')
+     # output <- generarModelo(splitDatos, config)
+     # loginfo("Modelo Generado.", logger = 'log')
     # 
     # 
     # loginfo("Generando output...", logger = 'log')

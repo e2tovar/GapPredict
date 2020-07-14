@@ -19,13 +19,13 @@ leer_config <- function(path){
   
   
   tryCatch(expr = {
-    #Read ad convert to list
+    #Read and convert to list
     config_xml <- xmlParse(file = path_config)
     config <- xmlToList(config_xml)
     
   }, error = function(e){
     
-    logerror("There is no config. Verify the name 'config.xml'",
+    logerror("There is a problem. Verify 'config.xml'",
              logger = 'log')
     stop()
   })
